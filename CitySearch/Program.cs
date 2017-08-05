@@ -24,7 +24,9 @@ namespace CitySearch {
 
             timePerParse.Stop();
 
-            Console.WriteLine(timePerParse.Elapsed);
+            Console.WriteLine($"Next Cities: {cityResult.NextCities.Count}.");
+            Console.WriteLine($"Next Letters: {cityResult.NextLetters.Count}.");
+            Console.WriteLine($"Time (ms): {timePerParse.Elapsed.Milliseconds}.");
         }
     }
 }
