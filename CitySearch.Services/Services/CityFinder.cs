@@ -11,38 +11,56 @@ using System.Threading.Tasks;
 namespace CitySearch.Services.Services {
     public class CityFinder : ICityFinder {
 
-        #region DataSource
-
-        public CityFinder() {
-            _cityDataSource = File.ReadAllLines("../Cities.txt").ToArray();
-        }
-
-        private readonly string[] _cityDataSource;
-
-        #endregion
-
         #region Public Methods
 
         public ICityResult Search(string searchString) {
-            searchString = searchString.ToLower();
+            ICollection<string> cities = new Collection<string>();
+            ICollection<string> letters = new Collection<string>();
 
-            ICollection<string> cities = SearchCities(searchString);
+            while (true) {
 
-            ICollection<string> letters = FilterLetters(cities, searchString);
+                searchString = searchString.ToUpper();
 
-            return new CityResult(cities, letters);
+                if (string.IsNullOrEmpty(searchString))
+                    continue;
+
+                var node = DataSource.Trie.Prefix(searchString);
+
+                if (node.Depth == searchString.Length) {
+                    foreach (var suffix in Suffixes(node).Distinct()) {
+                        cities.Add(searchString + suffix);
+
+                        if (suffix.Length > 0 && !letters.Contains(suffix.Substring(0, 1)))
+                            letters.Add(suffix.Substring(0, 1));
+                    }
+                }
+
+                return new CityResult(cities, letters);
+            }
         }
 
         #endregion
 
         #region Private Methods
 
-        private ICollection<string> SearchCities(string searchString) {
-            return _cityDataSource.AsParallel().Where(x => x.ToLower().StartsWith(searchString)).ToArray();
+        private IEnumerable<string> Suffixes(Node parent) {
+            var sb = new StringBuilder();
+            return Suffixes(parent, sb).Select(suffix => suffix.TrimEnd('$'));
         }
 
-        private ICollection<string> FilterLetters(ICollection<string> cities, string searchString) {
-            return cities.Select(c => c.Substring(searchString.Length, 1)).Distinct().ToArray();
+        private IEnumerable<string> Suffixes(Node parent, StringBuilder current) {
+            if (parent.IsLeaf()) {
+                yield return current.ToString();
+            } else {
+                foreach (var child in parent.Children) {
+                    current.Append(child.Value);
+
+                    foreach (var value in Suffixes(child, current))
+                        yield return value;
+
+                    --current.Length;
+                }
+            }
         }
 
         #endregion

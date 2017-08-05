@@ -1,26 +1,33 @@
-﻿using CitySearch.Services.Interfaces;
+﻿using CitySearch.Services;
+using CitySearch.Services.Interfaces;
 using CitySearch.Services.Services;
 using System;
 using System.Diagnostics;
 
-namespace CitySearch
-{
-    class Program
-    {
+namespace CitySearch {
+    public class Program {
 
-        static void Main(string[] args)
-        {
+        static void Main(string[] args) {
+            DataSource.SetData();
+
+            string searchString = Console.ReadLine();
+            Search(searchString);
+
+            Console.ReadLine();
+        }
+
+        static void Search(string searchString) {
             Stopwatch timePerParse = Stopwatch.StartNew();
             ICityFinder cityFinder = new CityFinder();
-            for (var i = 0; i <= 10; i++) {
-                
-                ICityResult cityResult = cityFinder.Search("BANG");
+            ICityResult cityResult = cityFinder.Search(searchString);
 
-                timePerParse.Stop();
-                Console.WriteLine(timePerParse.Elapsed.Milliseconds);
-                timePerParse.Restart();
+            timePerParse.Stop();
+
+            foreach (var item in cityResult.NextCities) {
+                Console.WriteLine(item);
             }
-            Console.ReadLine();
+
+            Console.WriteLine(timePerParse.Elapsed);
         }
     }
 }
