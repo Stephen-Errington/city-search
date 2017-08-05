@@ -10,7 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{12F859E1-30E0-4E6B-B535-9601D5180AF4}"
 	ProjectSection(SolutionItems) = preProject
 		Cities.txt = Cities.txt
-		TestData.xls = TestData.xls
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitySearch.Services.UnitTests", "CitySearch.Services.UnitTests\CitySearch.Services.UnitTests.csproj", "{F26B2D1F-013F-46FF-94DD-B5D6E1D74E67}"

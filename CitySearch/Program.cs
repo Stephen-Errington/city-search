@@ -23,9 +23,6 @@ namespace CitySearch {
             ICityResult cityResult = cityFinder.Search(searchString);
 
             timePerParse.Stop();
-            File.WriteAllLines("cities.txt", cityResult.NextCities);
-            File.WriteAllLines("letter.txt", cityResult.NextLetters);
-
 
             Console.WriteLine(timePerParse.Elapsed);
         }
