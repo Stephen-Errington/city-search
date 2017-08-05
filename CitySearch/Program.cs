@@ -1,8 +1,9 @@
 ﻿using CitySearch.Services;
-using CitySearch.Services.Interfaces;
 using CitySearch.Services.Services;
+using CitySearch.Services.Services.Interfaces;
 using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace CitySearch {
     public class Program {
@@ -22,10 +23,9 @@ namespace CitySearch {
             ICityResult cityResult = cityFinder.Search(searchString);
 
             timePerParse.Stop();
+            File.WriteAllLines("cities.txt", cityResult.NextCities);
+            File.WriteAllLines("letter.txt", cityResult.NextLetters);
 
-            foreach (var item in cityResult.NextCities) {
-                Console.WriteLine(item);
-            }
 
             Console.WriteLine(timePerParse.Elapsed);
         }

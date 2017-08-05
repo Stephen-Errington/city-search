@@ -3,16 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CitySearch.Services", "CitySearch.Services\CitySearch.Services.csproj", "{C1F8A880-E115-4571-97EB-7572B8F3C25E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitySearch", "CitySearch\CitySearch.csproj", "{8F237599-8844-4E3C-8500-183D5D18F951}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CitySearch.Services.Test", "CitySearch.Services.Test\CitySearch.Services.Test.csproj", "{D4A680C9-6E79-4AFB-AB9D-777065DACBE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitySearch.Services", "CitySearch.Services\CitySearch.Services.csproj", "{8C3B52D6-FC8E-4082-B123-F91A9EFE0CCA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A115B031-11E5-438A-AEA0-B1874E73E42F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{12F859E1-30E0-4E6B-B535-9601D5180AF4}"
 	ProjectSection(SolutionItems) = preProject
 		Cities.txt = Cities.txt
+		TestData.xls = TestData.xls
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CitySearch", "CitySearch\CitySearch.csproj", "{E3427A57-6628-4B19-AFB6-675760EB2205}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitySearch.Services.UnitTests", "CitySearch.Services.UnitTests\CitySearch.Services.UnitTests.csproj", "{F26B2D1F-013F-46FF-94DD-B5D6E1D74E67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,18 +21,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1F8A880-E115-4571-97EB-7572B8F3C25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1F8A880-E115-4571-97EB-7572B8F3C25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1F8A880-E115-4571-97EB-7572B8F3C25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1F8A880-E115-4571-97EB-7572B8F3C25E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4A680C9-6E79-4AFB-AB9D-777065DACBE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4A680C9-6E79-4AFB-AB9D-777065DACBE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4A680C9-6E79-4AFB-AB9D-777065DACBE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4A680C9-6E79-4AFB-AB9D-777065DACBE4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3427A57-6628-4B19-AFB6-675760EB2205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3427A57-6628-4B19-AFB6-675760EB2205}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3427A57-6628-4B19-AFB6-675760EB2205}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3427A57-6628-4B19-AFB6-675760EB2205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F237599-8844-4E3C-8500-183D5D18F951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F237599-8844-4E3C-8500-183D5D18F951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F237599-8844-4E3C-8500-183D5D18F951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F237599-8844-4E3C-8500-183D5D18F951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C3B52D6-FC8E-4082-B123-F91A9EFE0CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C3B52D6-FC8E-4082-B123-F91A9EFE0CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C3B52D6-FC8E-4082-B123-F91A9EFE0CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C3B52D6-FC8E-4082-B123-F91A9EFE0CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26B2D1F-013F-46FF-94DD-B5D6E1D74E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26B2D1F-013F-46FF-94DD-B5D6E1D74E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26B2D1F-013F-46FF-94DD-B5D6E1D74E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26B2D1F-013F-46FF-94DD-B5D6E1D74E67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
